@@ -1,0 +1,4 @@
+Hello, this is a test.
+We are testing the pipe functionality.
+Pipe will pass the output from one command to another.
+End of file input.

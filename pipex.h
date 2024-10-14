@@ -6,7 +6,7 @@
 /*   By: fluzi <fluzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 13:48:17 by fluzi             #+#    #+#             */
-/*   Updated: 2024/09/23 16:37:49 by fluzi            ###   ########.fr       */
+/*   Updated: 2024/10/14 14:16:12 by fluzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,7 @@
 # include <fcntl.h>
 # include <sys/wait.h>
 # include "libft/libft.h"
+
+# define RED "\033[31;1m"
+
 #endif
