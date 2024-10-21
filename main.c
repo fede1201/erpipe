@@ -119,10 +119,11 @@ void	fork_t(char **argv, int *fd, char **envp, int t)
 		nfd = open(argv[1], O_RDONLY);
 		if (nfd < 0)
 		{
+			printf("%d", nfd);
 			perror("Error \n");
 			exit(EXIT_SUCCESS);
 		}
-		dup2(nfd, STDIN_FILENO);
+			dup2(nfd, STDIN_FILENO);
 		dup2(fd[1], STDOUT_FILENO);
 		close(fd[0]);
 		close(fd[1]);
@@ -187,9 +188,8 @@ int	main(int argc, char **argv, char **envp)
 	close(fd[1]);
 	waitpid(pid1, &status1, 0);
 	waitpid(pid2, &status2, 0);
-	if (WIFEXITED(status1) && WEXITSTATUS(status1) != 0)
-		exit(WEXITSTATUS(status1));
-	if (WIFEXITED(status2) && WEXITSTATUS(status2) != 0)
-		exit(WEXITSTATUS(status2));
+
+	if (WIFEXITED(status2))
+    	return WEXITSTATUS(status2);
 	return (0);
 }
